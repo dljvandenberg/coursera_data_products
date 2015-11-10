@@ -1,37 +1,40 @@
 presentation
 ========================================================
 author: Dennis van den Berg
-date: Tue Nov 10 13:40:41 2015
+date: Tue Nov 10 14:35:22 2015
 
-First Slide
+Assignment - Shiny Application (1)
 ========================================================
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+1. Write a shiny application with associated supporting documentation. The documentation should be thought of as whatever a user will need to get started using your application.
+2. Deploy the application on Rstudio's shiny server
+3. Share the application link by pasting it into the text box below
+4. Share your server.R and ui.R code on github
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
 
-Slide With Code
+Assignment - Shiny Application (2)
 ========================================================
 
+The application must include the following:
 
-```r
-summary(cars)
-```
+1. Some form of input (widget: textbox, radio button, checkbox, ...)
+2. Some operation on the ui input in sever.R
+3. Some reactive output displayed as a result of server calculations
+4. You must also include enough documentation so that a novice user could use your application.
+5. The documentation should be at the Shiny website itself. Do not post to an external link.
 
-```
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
-```
 
-Slide With Plot
+Assignment - Presentation
+========================================================
+Your presentation must satisfy the following
+
+1. It must be done in Slidify or Rstudio Presenter
+2. It must be 5 pages
+3. It must be hosted on github or Rpubs
+4. It must contained some embedded R code that gets run when slidifying the document
+
+
+Conclusion
 ========================================================
 
-![plot of chunk unnamed-chunk-2](presentation-figure/unnamed-chunk-2-1.png) 
+..
