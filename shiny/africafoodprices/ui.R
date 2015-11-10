@@ -5,11 +5,12 @@ shinyUI(
             # Input selection
             textInput("country", "Country:", ""),
             textInput("location", "Location:", ""),
-            textInput("indicator", "Indicator:", ""),
+            selectInput("indicator", "Indicator:", choices = c("Diesel", "Large size chicken eggs")),
             submitButton("Plot!")
         ),
         mainPanel(
-            plotOutput("plot")
+            plotOutput("plot"),
+            div("Source: Africa Food Prices Collection, ", a(href="http://africafoodprices.io", "http://africafoodprices.io"))
         )
     )
 )
