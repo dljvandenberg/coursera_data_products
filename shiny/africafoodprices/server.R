@@ -14,10 +14,8 @@ df.prices$Date <- mdy_hms(df.prices$Date)
 shinyServer(
     function(input, output) {
         # Select subset of data
-        # TODO: select vars from user input
-        # df.selection <- subset(df.prices, country=="Zimbabwe" & indicator=="Diesel" & location=="All Locations")
         df.selection <- reactive({
-            subset(df.prices, country=="Zimbabwe" & indicator=="Diesel" & location=="All Locations")
+            subset(df.prices, country==input$country & indicator==input$indicator & location==input$location)
         })      
         
         # TODO: check if only single unit is used with this selection

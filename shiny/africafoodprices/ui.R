@@ -3,9 +3,10 @@ shinyUI(
         headerPanel("Africa Food Prices"),
         sidebarPanel(
             # Input selection
-            textInput("country", "Country:", ""),
-            textInput("location", "Location:", ""),
-            selectInput("indicator", "Indicator:", choices = c("Diesel", "Large size chicken eggs")),
+            # TODO: fill choices with data from dataset, for example: levels(df.prices$country)
+            selectInput("country", "Country:", choices=c("Zimbabwe", "Algeria", "Liberia", "Nigeria")),
+            selectInput("location", "Location:", choices=c("All Locations")),
+            selectInput("indicator", "Indicator:", choices=c("Diesel", "Large size chicken eggs")),
             submitButton("Plot!")
         ),
         mainPanel(
