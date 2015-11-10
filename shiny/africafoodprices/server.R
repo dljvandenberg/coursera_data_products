@@ -24,10 +24,11 @@ shinyServer(
         # Select subset of data
         df.selection <- subset(df.prices, country==country.selected & indicator==indicator.selected & location==location.selected)
         
-        # DEBUGGING CODE
-        output$table1 <- renderText(head(df.selection))
+        # TODO: check if only single unit is used with this selection
+        ylabel <- df.selection$Unit[1]
+        title <- paste("Price of ", indicator.selected, " in ", country.selected, sep="")
         
         # Plot
-        output$plot.date.vs.value <- renderPlot(qplot(Date, Value, data=df.selection))
+        output$plot <- renderPlot(qplot(Date, Value, data=df.selection, main=title, ylab=ylabel))
     }
 )
