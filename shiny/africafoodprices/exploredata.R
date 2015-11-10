@@ -1,18 +1,19 @@
 ### Exploratory analysis - Africa Food Prices
 
+# Libraries
+library(lubridate)
+library(ggplot2)
+
 # Set variables
 setwd("~/git/coursera_data_products/shiny/africafoodprices")
 file.data <- "./data/africafoodprices.csv"
 
-# Data set
-df.foodprices <- read.csv(file.data)
-#df.foodprices <- read.csv(file.data, colClasses = c("factor", "factor", "factor", "factor","Date", "numeric"))
+# Read data and convert classes
+df.prices <- read.csv(file.data)
+df.prices$Date <- mdy_hms(df.prices$Date)
 
-# TODO: convert classes of input data (date)
-library(lubridate)
-#dmy_hms("9/22/2014 12:00:00 AM")
-# %Y-%m-%d %I:%M:%S %p
+# Select subset of data
+df.selection <- subset(df.prices, country=="Zimbabwe" & indicator=="Diesel" & location=="All Locations")
 
-# TODO: choose subset of data (indicator=="Diesel") to start with
-# DONE: does not contain NAs
-# DONE: check Unit for each indicator (looks standard)
+# Plot
+qplot(Date, Value, data=df.selection)
