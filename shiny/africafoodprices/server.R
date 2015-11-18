@@ -20,10 +20,11 @@ shinyServer(
         
         # TODO: check if only single unit is used with this selection
         #ylabel <- df.selection$Unit[1]
-        #title <- paste("Price of ", indicator.selected, " in ", country.selected, sep="")
+        title <- reactive({
+            paste("Price of ", input$indicator, " in ", input$country, sep="")
+        })
         
         # Plot
-        # TODO: add ylab and main
-        output$plot <- renderPlot(qplot(Date, Value, data=df.selection()))
+        output$plot <- renderPlot(qplot(Date, Value, data=df.selection(), main=title()))
     }
 )

@@ -8,7 +8,7 @@ shinyUI(
         sidebarPanel(
             # Input selection
             selectInput("country", "Country:", choices=country.choices),
-            # TODO_OPTIONAL: more location options
+            # TODO_OPTIONAL: add location options
             #selectInput("location", "Location:", choices=c("All Locations")),
             selectInput("indicator", "Indicator:", choices=indicator.choices),
             submitButton("Plot!")
