@@ -1,36 +1,50 @@
 Food Prices in Africa
 ========================================================
 author: Dennis van den Berg
-date: `r date()`
+#date: `r date()`
 
 
-Web App
+Visualizing Open Data
 ========================================================
 
-TODO: Insert picture here
+![print screen](price_botswana_sugar_usd.png)
 
-https://dljvandenberg.shinyapps.io/africafoodprices
-
-
-Based on Open Data
-========================================================
-
-TODO: Insert print screen here
-
-http://africafoodprices.io
+Check web-app at: https://dljvandenberg.shinyapps.io/africafoodprices
 
 
 Functionalities
 ========================================================
 
-* Commodities: ..
-* Countries: ..
+Historical prices of commodities in African countries
+
+* 55 commodities (mostly food): beef with bones, bream fish, cooking salt, ..
+* 25 countries: Algeria, Angola, Benin, ..
 * Currency: USD or local
 
+Based on Open Data provided by: http://africafoodprices.io
+
+
+Behind the Screen
+========================================================
+
+TODO: Modify R Code
+
+```{r, echo=TRUE, eval=FALSE}
+summary(cars)
+```
+***
+```{r, echo=FALSE, eval=TRUE}
+summary(cars)
+```
 
 Conclusion
 ========================================================
 
-TODO: Insert picture here
+It's open and free, so use it!
 
-Use it!
+Questions or comments?
+* Contact me at dljvandenberg@gmail.com
+* Or check my GitHub page: http://dljvandenberg.github.io
+
+Acknowledgements
+* Thanks to http://africafoodprices.io for providing Open Data
