@@ -15,8 +15,20 @@ shinyServer(
     function(input, output) {
         # Select subset of data
         df.selection <- reactive({
-            subset(df.prices, country==input$country & indicator==input$indicator & location=="All Locations")
-        })      
+            df.selection.tmp <- subset(df.prices, country==input$country & indicator==input$indicator & location=="All Locations")
+            unique.units <- length(unique(df.selection.tmp$Unit))
+            # Handle situation in which df.selection is empty or contains multiple different units
+            if(unique.units==1){
+                df.selection.tmp
+            } else if(unique.units==0){
+                cat("WARNING: Selection is empty")
+                df.selection.tmp
+            } else {
+                # Filter using first unit in df.selection.tmp
+                cat("WARNING: Multiple different units in selection. Choosing first one")
+                subset(df.selection.tmp, Unit==df.selection.tmp$Unit[1])
+            }
+        })
         
         # Determine title and ylabel for plot
         ylabel <- reactive({
