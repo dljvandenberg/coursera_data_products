@@ -9,7 +9,7 @@ shinyUI(
             # Input selection
             selectInput("country", "Country:", choices=country.choices),
             # TODO_OPTIONAL: more location options
-            selectInput("location", "Location:", choices=c("All Locations")),
+            #selectInput("location", "Location:", choices=c("All Locations")),
             selectInput("indicator", "Indicator:", choices=indicator.choices),
             submitButton("Plot!")
         ),

@@ -15,7 +15,7 @@ shinyServer(
     function(input, output) {
         # Select subset of data
         df.selection <- reactive({
-            subset(df.prices, country==input$country & indicator==input$indicator & location==input$location)
+            subset(df.prices, country==input$country & indicator==input$indicator & location=="All Locations")
         })      
         
         # TODO: check if only single unit is used with this selection
