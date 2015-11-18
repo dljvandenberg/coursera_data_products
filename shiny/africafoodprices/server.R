@@ -18,13 +18,18 @@ shinyServer(
             subset(df.prices, country==input$country & indicator==input$indicator & location=="All Locations")
         })      
         
-        # TODO: check if only single unit is used with this selection
-        #ylabel <- df.selection$Unit[1]
+        # Determine title and ylabel for plot
+        ylabel <- reactive({
+            # Check whether only single unique unit is used with this selection
+            if(length(unique(df.selection()$Unit))==1) {
+                df.selection()$Unit[1]
+            }
+        })
         title <- reactive({
             paste("Price of ", input$indicator, " in ", input$country, sep="")
         })
         
         # Plot
-        output$plot <- renderPlot(qplot(Date, Value, data=df.selection(), main=title()))
+        output$plot <- renderPlot(qplot(Date, Value, data=df.selection(), main=title(), ylab=ylabel()))
     }
 )
