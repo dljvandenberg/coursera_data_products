@@ -1,40 +1,36 @@
-presentation
+Food Prices in Africa
 ========================================================
 author: Dennis van den Berg
-date: Wed Nov 18 11:41:04 2015
+date: Wed Nov 18 12:59:01 2015
 
-Assignment - Shiny Application (1)
+
+Web App
 ========================================================
 
-1. Write a shiny application with associated supporting documentation. The documentation should be thought of as whatever a user will need to get started using your application.
-2. Deploy the application on Rstudio's shiny server
-3. Share the application link by pasting it into the text box below
-4. Share your server.R and ui.R code on github
+TODO: Insert picture here
+
+https://dljvandenberg.shinyapps.io/africafoodprices
 
 
-Assignment - Shiny Application (2)
+Based on Open Data
 ========================================================
 
-The application must include the following:
+TODO: Insert print screen here
 
-1. Some form of input (widget: textbox, radio button, checkbox, ...)
-2. Some operation on the ui input in sever.R
-3. Some reactive output displayed as a result of server calculations
-4. You must also include enough documentation so that a novice user could use your application.
-5. The documentation should be at the Shiny website itself. Do not post to an external link.
+http://africafoodprices.io
 
 
-Assignment - Presentation
+Functionalities
 ========================================================
-Your presentation must satisfy the following
 
-1. It must be done in Slidify or Rstudio Presenter
-2. It must be 5 pages
-3. It must be hosted on github or Rpubs
-4. It must contained some embedded R code that gets run when slidifying the document
+* Commodities: ..
+* Countries: ..
+* Currency: USD or local
 
 
 Conclusion
 ========================================================
 
-..
+TODO: Insert picture here
+
+Use it!
