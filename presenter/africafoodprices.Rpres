@@ -1,7 +1,9 @@
 Food Prices in Africa
 ========================================================
 author: Dennis van den Berg
-#date: `r date()`
+date: `r format(Sys.Date(), format="%B %d %Y")`
+transition: concave
+
 
 
 Visualizing Open Data
@@ -37,14 +39,13 @@ summary(cars)
 summary(cars)
 ```
 
-Conclusion
+It's open and free, so use it!
 ========================================================
 
-It's open and free, so use it!
-
-Questions or comments?
+Questions, comments or contributions?
 * Contact me at dljvandenberg@gmail.com
-* Or check my GitHub page: http://dljvandenberg.github.io
+* Check my GitHub page: http://dljvandenberg.github.io
+* Or fork my repo: https://github.com/dljvandenberg/coursera_data_products
 
 Acknowledgements
 * Thanks to http://africafoodprices.io for providing Open Data
