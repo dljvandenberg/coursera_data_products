@@ -41,7 +41,7 @@ shinyServer(
             }
         })
         title <- reactive({
-            paste("Price of ", input$indicator, " in ", input$country, sep="")
+            paste("Price development of ", input$indicator, " in ", input$country, sep="")
         })
         
         # Plot

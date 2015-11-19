@@ -16,7 +16,7 @@ shinyUI(
         mainPanel(
             plotOutput("plot"),
             
-            h3("About the application"),
+            h3("About this application"),
             
             div(
                 "This web application displays historical data of commodity prices (mainly agricultural) in a number of countries (mainly in Africa).
