@@ -7,10 +7,8 @@ shinyUI(
         headerPanel("Africa Food Prices"),
         sidebarPanel(
             # Input selection
-            selectInput("country", "Country:", choices=country.choices),
-            # TODO_OPTIONAL: add location options
-            #selectInput("location", "Location:", choices=c("All Locations")),
-            selectInput("indicator", "Indicator:", choices=indicator.choices),
+            selectInput("country", "Country:", choices=country.choices, selected="Burundi"),
+            selectInput("indicator", "Indicator:", choices=indicator.choices, selected="Goat meat"),
             submitButton("Plot!")
         ),
         mainPanel(
