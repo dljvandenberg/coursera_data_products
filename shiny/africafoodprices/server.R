@@ -18,7 +18,7 @@ shinyServer(
     function(input, output) {
         # Select subset of data
         df.selection <- reactive({
-            df.selection.tmp <- subset(df.prices, country==input$country & indicator==input$indicator & location=="All Locations")
+            df.selection.tmp <- subset(df.prices, country==input$country & indicator==input$indicator)
             unique.units <- length(unique(df.selection.tmp$Unit))
             # Handle situation in which df.selection is empty or contains multiple different units
             if(unique.units==1){
