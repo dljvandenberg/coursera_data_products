@@ -45,6 +45,6 @@ shinyServer(
         })
         
         # Plot
-        output$plot <- renderPlot(qplot(Date, Value, data=df.selection(), main=title(), ylab=ylabel()))
+        output$plot <- renderPlot(qplot(Date, Value, data=df.selection(), main=title(), ylab=ylabel()) + geom_smooth(method="auto") + aes(color=location))
     }
 )
