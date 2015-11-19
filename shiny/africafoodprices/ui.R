@@ -15,7 +15,24 @@ shinyUI(
         ),
         mainPanel(
             plotOutput("plot"),
-            div("Source: Africa Food Prices Collection, ", a(href="http://africafoodprices.io", "http://africafoodprices.io"))
+            
+            h3("About the application"),
+            
+            div(
+                "This web application displays historical data of commodity prices (mainly agricultural) in a number of countries (mainly in Africa).
+                Visualizations have been generated from the data without additional cleaning (note that some outliers have been observed). Feel free to use, re-use or contribute to the",
+                a(href="https://github.com/dljvandenberg/coursera_data_products", "code"),
+                "or to",
+                a(href="http://dljvandenberg.github.io", "contact"),
+                "me."
+            ),
+            
+            h3("About the data"),
+            
+            div(
+                "Data was generously provided by", a(href="http://opendataforafrica.org", "The African Development Bank."),
+                "Terms of use for the data can be found", a(href="http://opendataforafrica.org/legal/termsofuse", "here.")
+            )
         )
     )
 )

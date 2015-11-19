@@ -1,3 +1,6 @@
+# For debugging when error occurs
+options(shiny.error=browser)
+
 # Libraries
 library(lubridate)
 library(ggplot2)
