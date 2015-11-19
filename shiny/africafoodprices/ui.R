@@ -30,8 +30,9 @@ shinyUI(
             h3("About the data"),
             
             div(
-                "Data was generously provided by", a(href="http://opendataforafrica.org", "The African Development Bank."),
-                "Terms of use for the data can be found", a(href="http://opendataforafrica.org/legal/termsofuse", "here.")
+                "The data set was generously provided by", a(href="http://opendataforafrica.org", "The African Development Bank"),
+                "and can be viewed or downloaded", a(href="https://raw.githubusercontent.com/dljvandenberg/coursera_data_products/master/shiny/africafoodprices/data/africafoodprices.csv", "here"),
+                "(50+ MB). Terms of use for the data can be found", a(href="http://opendataforafrica.org/legal/termsofuse", "here.")
             )
         )
     )
