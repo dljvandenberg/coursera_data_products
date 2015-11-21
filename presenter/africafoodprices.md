@@ -1,7 +1,7 @@
 Food Prices in Africa
 ========================================================
 author: Dennis van den Berg
-date: November 18 2015
+date: November 19 2015
 transition: concave
 
 
@@ -23,7 +23,7 @@ Historical prices of commodities in African countries
 * 25 countries: Algeria, Angola, Benin, ..
 * Currency: USD or local
 
-Based on Open Data provided by: http://africafoodprices.io
+Based on Open Data provided by: Africa Food Prices Collection, http://africafoodprices.io
 
 
 Behind the Screen
@@ -56,4 +56,4 @@ Questions, comments or contributions?
 * Or fork my repo: https://github.com/dljvandenberg/coursera_data_products
 
 Acknowledgements
-* Thanks to http://africafoodprices.io for providing Open Data
+* Thanks to Africa Food Prices Collection (http://africafoodprices.io) for providing Open Data
