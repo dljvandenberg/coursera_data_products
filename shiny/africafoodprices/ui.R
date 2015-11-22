@@ -23,7 +23,7 @@ shinyUI(
                       h3("Usage"),
                       
                       div(
-                          "Select country, commodity, fit type (optional), whether country needs to be splitted into separate measuring locations (optional) and click 'Plot!'"
+                          "Select country, commodity, fit type, whether country needs to be splitted into separate measuring locations and click 'Plot!'"
                       ),
                       
                       h3("About this application"),
