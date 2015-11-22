@@ -15,7 +15,7 @@ shinyServer(
     function(input, output) {
         # Select subset of data
         df.selection <- reactive({
-            df.selection.tmp <- subset(df.prices, country==input$country & indicator==input$indicator)
+            df.selection.tmp <- subset(df.prices, country==input$country & indicator==input$commodity)
             unique.units <- length(unique(df.selection.tmp$Unit))
             # Handle situation in which df.selection is empty or contains multiple different units
             if(unique.units==1){
@@ -38,7 +38,7 @@ shinyServer(
             }
         })
         title <- reactive({
-            paste("Price development of ", input$indicator, " in ", input$country, sep="")
+            paste("Price development of ", input$commodity, " in ", input$country, sep="")
         })
         
         # Determine fit type (geom)
