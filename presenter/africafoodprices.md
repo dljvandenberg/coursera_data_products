@@ -21,6 +21,8 @@ From Open Data to Visualization
 ***
 ![plot of chunk unnamed-chunk-2](africafoodprices-figure/unnamed-chunk-2-1.png) 
 
+Source: [African Development Bank](http://opendataforafrica.org)
+
 
 To Interactive Web Application
 ========================================================
