@@ -19,7 +19,8 @@ head(levels(df.prices$country))
 # Select subset of data
 country.selected <- "Burundi"
 indicator.selected <- "Goat meat"
-df.selection <- subset(df.prices, country==country.selected & indicator==indicator.selected)
+#df.selection <- subset(df.prices, country==country.selected & indicator==indicator.selected)
+df.selection <- subset(df.prices, country==country.selected & indicator==indicator.selected & location!="All Locations")
 
 # Title and label
 ylabel <- df.selection$Unit[1]

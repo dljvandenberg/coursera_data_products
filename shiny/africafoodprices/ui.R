@@ -9,6 +9,7 @@ shinyUI(
         sidebarPanel(
             # Input selection
             selectInput("country", "Country:", choices=country.choices, selected="Madagascar"),
+            checkboxInput("bool.splitlocation", "Split country into locations", value=TRUE),
             selectInput("commodity", "Commodity:", choices=commodity.choices, selected="Vegetable oil"),
             selectInput("fit", "Fit type:", choices=fit.choices, selected="Smooth with confidence interval"),
             submitButton("Plot!")
@@ -22,7 +23,7 @@ shinyUI(
                       h3("Usage"),
                       
                       div(
-                          "Select country, commodity, fit type (optional) and click 'Plot!'"
+                          "Select country, commodity, fit type (optional), whether country needs to be splitted into separate measuring locations (optional) and click 'Plot!'"
                       ),
                       
                       h3("About this application"),
