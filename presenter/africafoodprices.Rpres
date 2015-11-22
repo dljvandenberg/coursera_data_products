@@ -6,10 +6,49 @@ transition: concave
 
 
 
-Visualizing Open Data
+From Open Data to Visualization
 ========================================================
 
-![print screen](price_burundi_goat_meat_usd.png)
+```{r, echo=FALSE, eval=TRUE}
+# Libraries
+library(lubridate)
+library(ggplot2)
+
+# Set variables
+setwd("~/git/coursera_data_products/shiny/africafoodprices")
+file.data <- "./data/africafoodprices.csv"
+
+# Read data and convert classes
+df.prices <- read.csv(file.data)
+df.prices$Date <- mdy_hms(df.prices$Date)
+
+# Explore data
+head(df.prices, 2)
+
+# Show indicators and countries
+#head(levels(df.prices$indicator))
+#head(levels(df.prices$country))
+```
+***
+```{r, echo=FALSE, eval=TRUE}
+# Select subset of data
+country.selected <- "Burundi"
+indicator.selected <- "Goat meat"
+df.selection <- subset(df.prices, country==country.selected & indicator==indicator.selected)
+
+# Title and label
+ylabel <- df.selection$Unit[1]
+title <- paste("Price development of ", indicator.selected, " in ", country.selected, sep="")
+
+# Plot
+qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + geom_smooth(method="auto") + aes(color=location)
+```
+
+
+To Interactive Web Application
+========================================================
+
+![print screen](app_printscreen.png)
 
 Check web-app at: https://dljvandenberg.shinyapps.io/africafoodprices
 
@@ -26,19 +65,6 @@ Historical prices of commodities in African countries
 * Currency: USD
 
 
-Behind the Screen
-========================================================
-
-TODO: Modify R Code
-
-```{r, echo=TRUE, eval=FALSE}
-summary(cars)
-```
-***
-```{r, echo=FALSE, eval=TRUE}
-summary(cars)
-```
-
 It's open and free, so use it!
 ========================================================
 
@@ -48,4 +74,4 @@ Questions, comments or contributions?
 * Or fork my repo: https://github.com/dljvandenberg/coursera_data_products
 
 Acknowledgements
-* Thanks to The African Development Bank (http://opendataforafrica.org) for providing Open Data
+* Thanks to The African Development Bank (http://opendataforafrica.org) for providing open data

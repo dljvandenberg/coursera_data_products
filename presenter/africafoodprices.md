@@ -6,10 +6,26 @@ transition: concave
 
 
 
-Visualizing Open Data
+From Open Data to Visualization
 ========================================================
 
-![print screen](price_burundi_goat_meat_usd.png)
+
+```
+  country      location           indicator measure      Unit       Date
+1 Algeria All Locations Loaf of white bread     USD USD/450 g 2014-08-25
+2 Algeria All Locations Loaf of white bread     USD USD/450 g 2014-08-25
+      Value
+1 0.1141835
+2 0.1141835
+```
+***
+![plot of chunk unnamed-chunk-2](africafoodprices-figure/unnamed-chunk-2-1.png) 
+
+
+To Interactive Web Application
+========================================================
+
+![print screen](app_printscreen.png)
 
 Check web-app at: https://dljvandenberg.shinyapps.io/africafoodprices
 
@@ -26,27 +42,6 @@ Historical prices of commodities in African countries
 * Currency: USD
 
 
-Behind the Screen
-========================================================
-
-TODO: Modify R Code
-
-
-```r
-summary(cars)
-```
-***
-
-```
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
-```
-
 It's open and free, so use it!
 ========================================================
 
@@ -56,4 +51,4 @@ Questions, comments or contributions?
 * Or fork my repo: https://github.com/dljvandenberg/coursera_data_products
 
 Acknowledgements
-* Thanks to The African Development Bank (http://opendataforafrica.org) for providing Open Data
+* Thanks to The African Development Bank (http://opendataforafrica.org) for providing open data
