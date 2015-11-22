@@ -3,8 +3,8 @@ country.choices <- c("Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "
 indicator.choices <- c("Beef with bones", "Bream fish", "Cooking Gas (LPG Cylinder)", "Cooking salt", "Diesel", "Gas (regular, unleaded)", "Goat meat", "Green cabbage", "Large size chicken eggs", "Loaf of white bread", "Maize grain", "Millet whole grain", "Nile perch", "Onion", "Pasteurized unskimmed milk", "Round tomato", "Sorghum white whole grain", "Spotted beans", "Sweet potatoes", "Vegetable oil", "Wheat flour", "White maize flour", "White rice, 25% broken", "White sugar", "Whole chicken frozen")
 
 shinyUI(
-    pageWithSidebar(
-        headerPanel("Africa Food Prices"),
+    fluidPage(
+        headerPanel("Food Prices in Africa"),
         sidebarPanel(
             # Input selection
             selectInput("country", "Country:", choices=country.choices, selected="Madagascar"),
@@ -12,26 +12,30 @@ shinyUI(
             submitButton("Plot!")
         ),
         mainPanel(
-            plotOutput("plot"),
-            
-            h3("About this application"),
-            
-            div(
-                "This web application displays historical data of commodity prices (mainly agricultural) in a number of countries (mainly in Africa).
+            plotOutput("plot")
+        ),
+        fluidRow(
+            column(   12,
+                      
+                      h3("About this application"),
+                      
+                      div(
+                          "This web application displays historical data of commodity prices (mainly agricultural) in a number of countries (mainly in Africa).
                 Visualizations have been generated from the data without additional cleaning (note that some outliers have been observed). Feel free to use, re-use or contribute to the",
-                a(href="https://github.com/dljvandenberg/coursera_data_products", "code"),
-                "or to",
-                a(href="http://dljvandenberg.github.io", "contact"),
-                "me."
-            ),
-            
-            h3("About the data"),
-            
-            div(
-                "The data set was generously provided by", a(href="http://opendataforafrica.org", "The African Development Bank"),
-                "and can be viewed or downloaded", a(href="https://raw.githubusercontent.com/dljvandenberg/coursera_data_products/master/shiny/africafoodprices/data/africafoodprices.csv", "here"),
-                "(50+ MB). Terms of use for the data can be found", a(href="http://opendataforafrica.org/legal/termsofuse", "here.")
-            )
+                          a(href="https://github.com/dljvandenberg/coursera_data_products", "code"),
+                          "or to",
+                          a(href="http://dljvandenberg.github.io", "contact"),
+                          "me."
+                      ),
+                      
+                      h3("About the data"),
+                      
+                      div(
+                          "The data set was generously provided by", a(href="http://opendataforafrica.org", "The African Development Bank"),
+                          "and can be viewed or downloaded", a(href="https://raw.githubusercontent.com/dljvandenberg/coursera_data_products/master/shiny/africafoodprices/data/africafoodprices.csv", "here"),
+                          "(50+ MB). Terms of use for the data can be found", a(href="http://opendataforafrica.org/legal/termsofuse", "here.")
+                      )
+            )            
         )
     )
 )
