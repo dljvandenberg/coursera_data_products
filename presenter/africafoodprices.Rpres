@@ -44,7 +44,7 @@ title <- paste("Price development of ", indicator.selected, " in ", country.sele
 qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + geom_smooth(method="auto") + aes(color=location)
 ```
 
-Source: [African Development Bank](http://opendataforafrica.org)
+Data: [African Development Bank](http://opendataforafrica.org)
 
 
 To Interactive Web Application

@@ -25,5 +25,13 @@ df.selection <- subset(df.prices, country==country.selected & indicator==indicat
 ylabel <- df.selection$Unit[1]
 title <- paste("Price development of ", indicator.selected, " in ", country.selected, sep="")
 
+# Types of fit
+geom.point <- geom_point()
+geom.smooth <- geom_smooth(method="loess", se=FALSE)
+geom.smoothconf <- geom_smooth(method="loess", se=TRUE)
+geom.line <- geom_line()
+
 # Plot
-qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + geom_smooth(method="auto") + aes(color=location)
+qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + aes(color=location) + geom.smooth
+
+

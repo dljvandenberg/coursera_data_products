@@ -41,7 +41,24 @@ shinyServer(
             paste("Price development of ", input$indicator, " in ", input$country, sep="")
         })
         
+        # Determine fit type (geom)
+        fit <- reactive({
+            if (input$fit=="Connected points"){
+                geom_line()
+            } else if (input$fit=="Smooth"){
+                geom_smooth(method="loess", se=FALSE)
+            } else if (input$fit=="Smooth with confidence interval"){
+                geom_smooth(method="loess", se=TRUE)
+            } else if (input$fit=="Linear"){
+                geom_smooth(method="lm", se=FALSE)
+            } else if (input$fit=="Linear with confidence interval"){
+                geom_smooth(method="lm", se=TRUE)
+            } else {
+                geom_point()
+            }
+        })
+        
         # Plot
-        output$plot <- renderPlot(qplot(Date, Value, data=df.selection(), main=title(), ylab=ylabel()) + geom_smooth(method="auto") + aes(color=location))
+        output$plot <- renderPlot(qplot(Date, Value, data=df.selection(), main=title(), ylab=ylabel()) + aes(color=location) + fit())
     }
 )
