@@ -41,7 +41,7 @@ ylabel <- df.selection$Unit[1]
 title <- paste("Price development of ", indicator.selected, " in ", country.selected, sep="")
 
 # Plot
-qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + geom_smooth(method="auto") + aes(color=location)
+qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + geom_line() + aes(color=location)
 ```
 
 Data: [African Development Bank](http://opendataforafrica.org)
