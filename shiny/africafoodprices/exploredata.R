@@ -12,8 +12,18 @@ file.data <- "./data/africafoodprices.csv"
 df.prices <- read.csv(file.data)
 df.prices$Date <- mdy_hms(df.prices$Date)
 
+# Show indicators and countries
+head(levels(df.prices$indicator))
+head(levels(df.prices$country))
+
 # Select subset of data
-df.selection <- subset(df.prices, country=="Zimbabwe" & indicator=="Diesel" & location=="All Locations")
+country.selected <- "Burundi"
+indicator.selected <- "Goat meat"
+df.selection <- subset(df.prices, country==country.selected & indicator==indicator.selected)
+
+# Title and label
+ylabel <- df.selection$Unit[1]
+title <- paste("Price development of ", indicator.selected, " in ", country.selected, sep="")
 
 # Plot
-qplot(Date, Value, data=df.selection)
+qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + geom_smooth(method="auto") + aes(color=location)
