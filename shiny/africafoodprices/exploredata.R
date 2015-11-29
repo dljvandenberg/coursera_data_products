@@ -3,6 +3,7 @@
 # Libraries
 library(lubridate)
 library(ggplot2)
+library(rCharts)
 
 # Set variables
 setwd("~/git/coursera_data_products/shiny/africafoodprices")
@@ -32,7 +33,11 @@ geom.smooth <- geom_smooth(method="loess", se=FALSE)
 geom.smoothconf <- geom_smooth(method="loess", se=TRUE)
 geom.line <- geom_line()
 
-# Plot
-qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + aes(color=location) + geom.smooth
+# Plot using ggplot2
+qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + aes(color=location) + geom.line
 
-
+# Plot using rCharts -> date handling not standard + change point type?
+hPlot(x = "Date", y = "Value", data = df.selection, type="line", group="location")
+#df.selection.rchart <- transform(df.selection, Date = as.character(Date))
+#mPlot(x = "Date", y = c("Value"), type = "Line", data = df.selection.rchart, color="location")
+#hPlot(x = "Date", y = "Value", data = df.selection.rchart, type="line", group="location")
