@@ -11,7 +11,7 @@ shinyUI(
             selectInput("country", "Country:", choices=country.choices, selected="Madagascar"),
             checkboxInput("bool.splitlocation", "Split country into locations", value=TRUE),
             selectInput("commodity", "Commodity:", choices=commodity.choices, selected="Vegetable oil"),
-            selectInput("fit", "Fit type:", choices=fit.choices, selected="Smooth with confidence interval"),
+            selectInput("fit", "Fit type:", choices=fit.choices, selected="Connected points"),
             submitButton("Plot!")
         ),
         mainPanel(
