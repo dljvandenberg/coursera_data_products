@@ -5,6 +5,7 @@ fit.choices <- c("No fit", "Connected points", "Smooth", "Smooth with confidence
 
 shinyUI(
     fluidPage(
+        tags$head(includeScript("google-analytics.js")),
         headerPanel("Food Prices in Africa"),
         sidebarPanel(
             # Input selection
