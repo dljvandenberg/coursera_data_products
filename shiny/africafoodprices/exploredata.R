@@ -3,7 +3,7 @@
 # Libraries
 library(lubridate)
 library(ggplot2)
-library(rCharts)
+library(plotly)
 
 # Set variables
 setwd("~/git/coursera_data_products/shiny/africafoodprices")
@@ -18,26 +18,30 @@ head(levels(df.prices$indicator))
 head(levels(df.prices$country))
 
 # Select subset of data
-country.selected <- "Burundi"
-indicator.selected <- "Goat meat"
+country.selected <- "Madagascar"
+indicator.selected <- "Vegetable oil"
 #df.selection <- subset(df.prices, country==country.selected & indicator==indicator.selected)
 df.selection <- subset(df.prices, country==country.selected & indicator==indicator.selected & location!="All Locations")
 
 # Title and label
-ylabel <- df.selection$Unit[1]
+ylabel <- as.character(df.selection$Unit[1])
 title <- paste("Price development of ", indicator.selected, " in ", country.selected, sep="")
 
 # Types of fit
-geom.point <- geom_point()
-geom.smooth <- geom_smooth(method="loess", se=FALSE)
-geom.smoothconf <- geom_smooth(method="loess", se=TRUE)
-geom.line <- geom_line()
+#geom.point <- geom_point()
+#geom.smooth <- geom_smooth(method="loess", se=FALSE)
+#geom.smoothconf <- geom_smooth(method="loess", se=TRUE)
+#geom.line <- geom_line()
 
-# Plot using ggplot2
-qplot(Date, Value, data=df.selection, main=title, ylab=ylabel) + aes(color=location) + geom.line
+# Plot
+#ggplot(df.selection, aes(x = Date, y = Value, color = location)) + geom_point(size=.5) + geom_line() +
+#    ggtitle(title) + xlab("Date") + ylab(ylabel)
+#ggplotly()
 
-# Plot using rCharts -> date handling not standard + change point type?
-hPlot(x = "Date", y = "Value", data = df.selection, type="line", group="location")
-#df.selection.rchart <- transform(df.selection, Date = as.character(Date))
-#mPlot(x = "Date", y = c("Value"), type = "Line", data = df.selection.rchart, color="location")
-#hPlot(x = "Date", y = "Value", data = df.selection.rchart, type="line", group="location")
+# Improved plot
+ggplot(df.selection, aes(x = Date, y = Value, color = location)) + geom_point(size=.5) + geom_line() +
+    ggtitle(title) + xlab("Date") + ylab("USD/litre") + scale_color_discrete(name="Region")
+ggplotly()
+
+
+
